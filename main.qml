@@ -169,20 +169,3 @@ ApplicationWindow {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*##^## Designer {
-    D{i:3;anchors_y:50}D{i:5;anchors_height:21;anchors_x:1325;anchors_y:4}
-}
- ##^##*/
