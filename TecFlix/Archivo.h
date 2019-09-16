@@ -7,6 +7,9 @@
 #include <QTextStream>
 #include <QDebug>
 #include <iostream>
+#include "mainwindow.h"
+#include <QApplication>
+#include <QGridLayout>
 using namespace std;
 
 
@@ -14,21 +17,27 @@ class Archivo
 {
 public:
     Archivo();
+    int can = -1;
+    int columna_dinamica = 28;
+    string **MatrizActual = new string *[columna_dinamica];
+    string **MatrizAnterior= new string *[columna_dinamica];
+    string **MatrizSiguiente= new string *[columna_dinamica];
 
-public: void Leer(){
-        int *actual = new int ;
-          *actual = 1;
-          int *siguiente = new int ;
-          *siguiente = 2;
-          int *anterior = new int ;
-          *anterior = 0;
+public: void Leer(int zoom,int actual,int siguiente,int anterior){
+
           int cant;
+           int columna_dinamica = 28;
           cant = -1;
-          int zoom;
-          zoom = 9;
-          string MatrizActual[28];
-          string MatrizAnterior[28];
-          string MatrizSiguiente[28];
+          string **MatrizActual = new string *[columna_dinamica];
+          string **MatrizAnterior= new string *[columna_dinamica];
+          string **MatrizSiguiente= new string *[columna_dinamica];
+
+              for(int i = 0; i <zoom;i++)   {
+                MatrizActual[i] = new string[columna_dinamica];
+                MatrizAnterior[i] = new string[columna_dinamica];
+                MatrizSiguiente[i] = new string[columna_dinamica];
+              }
+
               // Abre el archivo
               QFile file("/home/abigail/Escritorio/TecFlix/movie_metadata.csv");
               if ( !file.open(QFile::ReadOnly | QFile::Text) ) {
@@ -41,36 +50,38 @@ public: void Leer(){
                   {
                        cant = cant +1;
                       QString line = in.readLine();
-                      if(cant>= (*anterior*zoom)+1 and cant<= (*actual*zoom)  ){
+                      if(cant>= (anterior*zoom)+1 and cant<= (actual*zoom)  ){
                           int j = 0;
+                          cout << cant << " Actual " <<endl;
                           for (QString item : line.split(",")) {
-                              MatrizActual[j] = item.toStdString();
-                              cout << MatrizActual[j] << "  ";
+                              MatrizActual[cant%zoom][j] = item.toStdString();
+                              cout << MatrizActual[cant%zoom][j]<< " ";
                               j++;
                           }
                           cout <<endl;
                           // cout << (cant-1)%9 << " Actual " <<endl;
                          //  cout << line.toStdString()<<endl;
                       }
-                      if(cant>= ((*anterior-1)*zoom)+1 and cant<= (*anterior*zoom) and cant>0  ){
+                      if(cant>= ((anterior-1)*zoom)+1 and cant<= (anterior*zoom) and cant>0  ){
                           int j = 0;
+                          cout << cant << " Anterior " <<endl;
                           for (QString item : line.split(",")) {
-                              MatrizAnterior[j] = item.toStdString();
-                              //cout << MatrizAnterior[j] << "  ";
+                              MatrizAnterior[cant%zoom][j]  = item.toStdString();
+                              cout << MatrizAnterior[cant%zoom][j]<<" ";
                               j++;
                           }
                            //cout << cant << " Anterior " <<endl;
                            //cout << line.toStdString()<<endl;
                       }
-                      if(cant>= (*actual*zoom)+1 and cant<= (*siguiente*zoom)  ){
+                      if(cant>= (actual*zoom)+1 and cant<= (siguiente*zoom)  ){
+                          cout << cant << " Siguiente " << endl;
                           int j = 0;
                           for (QString item : line.split(",")) {
-                              MatrizSiguiente[j] = item.toStdString();
-                             // cout << MatrizSiguiente[j] << "  ";
+                              MatrizSiguiente[cant%zoom][j]  = item.toStdString();
+                             cout << MatrizActual[cant%zoom][j]<<" ";
                               j++;
                           }
-                          // cout << cant << " Siguiente " <<endl;
-                           //cout << line.toStdString()<<endl;
+                           cout << endl;
                       }
 
                       // consider that the line separated by semicolons into columns
@@ -80,6 +91,8 @@ public: void Leer(){
                   cout <<cant;
                   }
                   file.close();
+
+
 
     }
 };

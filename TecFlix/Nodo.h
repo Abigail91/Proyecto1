@@ -14,7 +14,7 @@ class Nodo {
         Nodo*Siguiente;
     public:
 
-        Nodo(int v, Nodo*sig=NULL){
+        Nodo(int v, Nodo*sig=nullptr){
 
             this->valor = v;
             this->Siguiente = sig;
