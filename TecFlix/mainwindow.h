@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QPushButton>
 #include <QGridLayout>
+#include <QNetworkAccessManager>
+#include "networkManager.h"
 
 
 namespace Ui {
@@ -18,11 +20,13 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     virtual~MainWindow();
     void recargar();
+    void descargarHtml();
 
 private slots:
    void masBoton();
    void menosBoton();
    void nPBoton();
+   void dataInDaHouse(QByteArray data);
 
 
 private:
@@ -33,6 +37,7 @@ private:
      QWidget *win;
       QGridLayout *layout;
       int *zoom;
+      NetworkManager Don;
 
 
 

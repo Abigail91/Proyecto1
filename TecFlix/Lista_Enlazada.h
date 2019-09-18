@@ -8,12 +8,12 @@
 
 #include "Nodo.h"
 #include <iostream>
-
+template <class T>
 
 class Lista_Enlazada {
 private:
-    Nodo *primero;
-    Nodo *actual;
+    Nodo<T> *primero;
+    Nodo<T> *actual;
     int len;
 
     bool ListaVacia() {
@@ -28,7 +28,7 @@ public:
 
     };
 
-    void Insertar(int v) {
+    void Insertar(T v) {
         Nodo *nuevo = new Nodo(v);
         if (ListaVacia()) {
             this->primero = nuevo;

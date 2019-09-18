@@ -18,23 +18,34 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    connect(&Don,SIGNAL(dataReadyRead(QByteArray)),this,SLOT(dataInDaHouse(QByteArray)));
     win = new QWidget(this);
     win->resize(this->size());
     this->setCentralWidget(win);
     layout = new QGridLayout;
 
     win->setLayout(layout);
-    mas = new QPushButton("+", this);
+    mas = new QPushButton(this);
     //set size and location of the button
     mas->setGeometry(QRect( QPoint(1080, 10), QSize(50, 50) ));
+    QIcon *icon = new QIcon("/home/abigail/Desktop/Proyecto1/Zoommas.png");
+    mas->setIcon(*icon);
+    mas->setStyleSheet("background-color: black");
+
+
+
     zoom = new int(9);
 
 
-    //Connect button signal to appropriate slot
+    //Connect button signal to appropriate slt
     connect(mas, SIGNAL (clicked()),this, SLOT (masBoton()));
 
-    menos = new QPushButton("-",this);
+    menos = new QPushButton(this);
     menos->setGeometry(QRect( QPoint(1080, 60), QSize(50, 50) ));
+    QIcon *iconmen = new QIcon("/home/abigail/Desktop/Proyecto1/Zoommenos.png");
+    menos->setIcon(*iconmen);
+    menos->setStyleSheet("background-color: black");
+
 
 
 
@@ -43,6 +54,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     nP = new QPushButton("No paginado" ,this);
     nP->setGeometry(QRect( QPoint(1015, 920), QSize(120, 50) ));
+    nP->setStyleSheet("background-color: dark-grey;color:red");
 
     //Connect button signal to appropriate slot
     connect(nP, SIGNAL (clicked()),this, SLOT (nPBoton()));
@@ -94,11 +106,23 @@ void MainWindow::menosBoton()
     }
  }
 void MainWindow::nPBoton()
- {
 
-     //resize button
-     nP->resize(30,30);
- }
+ {
+       QString s = "http://www.imdb.com/title/tt1345836/?ref_=fn_tt_tt_1";
+      QString h = s.insert(4,"s");
+
+        Don.makeRequest(h);
+        cout <<endl;
+         cout <<"AAAA" << h.toStdString() << "AAAA";
+}
+
+void MainWindow::dataInDaHouse(QByteArray data)
+{
+    QString dataString;
+    dataString = data;
+
+  cout << dataString.toStdString();
+}
 
 void  MainWindow::recargar(){
     int actual = 2;
@@ -121,6 +145,11 @@ void  MainWindow::recargar(){
    };
 
 }
+
+
+
+
+
 MainWindow::~MainWindow()
 {
     delete ui;
