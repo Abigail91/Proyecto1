@@ -21,6 +21,7 @@ public:
     virtual~MainWindow();
     void recargar();
     void descargarHtml();
+    void MostrarPaginas();
 
 private slots:
    void masBoton();
@@ -38,6 +39,18 @@ private:
       QGridLayout *layout;
       int *zoom;
       NetworkManager Don;
+      QPushButton * primero;
+      QPushButton * segundo;
+      QPushButton * tercero;
+      QPushButton * cuarto;
+      QPushButton * quinto;
+      QPushButton * flecha;
+      QPushButton * flechaAnterior;
+      int actual;
+      int anterior;
+      int siguiente;
+
+
 
 
 

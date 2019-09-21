@@ -31,7 +31,25 @@ MainWindow::MainWindow(QWidget *parent) :
     QIcon *icon = new QIcon("/home/abigail/Desktop/Proyecto1/Zoommas.png");
     mas->setIcon(*icon);
     mas->setStyleSheet("background-color: black");
-
+    actual = 1;
+    siguiente = 2;
+    anterior = 0;
+    primero = new QPushButton(this);
+    primero->setGeometry(1020,940,18,18);
+    segundo = new QPushButton(this);
+    segundo->setGeometry(1040,940,18,18);
+    tercero = new QPushButton(this);
+    tercero->setGeometry(1060,940,18,18);
+    cuarto = new QPushButton(this);
+    cuarto->setGeometry(1080,940,18,18);
+    quinto = new QPushButton(this);
+    quinto->setGeometry(1100,940,18,18);
+    flecha = new QPushButton(this);
+    flecha->setGeometry(1120,940,18,18);
+    flecha->setText(">");
+    flechaAnterior = new QPushButton(this);
+    flechaAnterior->setGeometry(1000,940,18,18);
+    flechaAnterior->setText("<");
 
 
     zoom = new int(9);
@@ -46,14 +64,11 @@ MainWindow::MainWindow(QWidget *parent) :
     menos->setIcon(*iconmen);
     menos->setStyleSheet("background-color: black");
 
-
-
-
     //Connect button signal to appropriate slot
     connect(menos, SIGNAL (clicked()),this, SLOT (menosBoton()));
 
     nP = new QPushButton("No paginado" ,this);
-    nP->setGeometry(QRect( QPoint(1015, 920), QSize(120, 50) ));
+    nP->setGeometry(QRect( QPoint(1020, 850), QSize(120, 50) ));
     nP->setStyleSheet("background-color: dark-grey;color:red");
 
     //Connect button signal to appropriate slot
@@ -125,9 +140,7 @@ void MainWindow::dataInDaHouse(QByteArray data)
 }
 
 void  MainWindow::recargar(){
-    int actual = 2;
-    int siguiente = 3;
-    int anterior = 1;
+    this->MostrarPaginas();
 
      Archivo Data;
      Data.Leer(*zoom,actual,siguiente,anterior);
@@ -142,10 +155,37 @@ void  MainWindow::recargar(){
            label1->setPixmap(pix.scaled(l,l,Qt::KeepAspectRatio));
        }
 
-   };
+   }
 
 }
 
+void MainWindow::MostrarPaginas(){
+
+
+    string p = to_string(actual);
+    QString qstr = QString::fromStdString(p);
+    primero->setText(qstr);
+
+
+    p = to_string(actual+1);
+    qstr = QString::fromStdString(p);
+    segundo->setText(qstr);
+
+    p = to_string(actual+2);
+    qstr = QString::fromStdString(p);
+    tercero->setText(qstr);
+
+    p = to_string(actual+3);
+    qstr = QString::fromStdString(p);
+    cuarto->setText(qstr);
+
+    p = to_string(actual+4);
+    qstr = QString::fromStdString(p);
+    quinto->setText(qstr);
+
+
+
+}
 
 
 
