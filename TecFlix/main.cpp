@@ -2,11 +2,9 @@
 #include <QApplication>
 #include<QtGui>
 #include<QtCore>
-#include<QLayout>
-#include<QLabel>
 #include "Archivo.h"
-#include <math.h>
-#include<QPushButton>
+#include "lista.h"
+#include <iostream>
 
 int main(int argc, char *argv[])
 {
@@ -15,8 +13,10 @@ int main(int argc, char *argv[])
     MainWindow *w = new MainWindow;
 
     w->recargar();
+    w->MostrarPaginas();
 
     w->show();
+
 
     return a.exec();
 }

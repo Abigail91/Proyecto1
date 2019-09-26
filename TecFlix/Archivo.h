@@ -7,10 +7,10 @@
 #include <QTextStream>
 #include <QDebug>
 #include <iostream>
-#include "mainwindow.h"
 #include <QApplication>
 #include <QGridLayout>
 #include <cstring>
+#include "lista.h"
 
 using namespace std;
 
@@ -19,11 +19,12 @@ class Archivo
 {
 public:
     Archivo();
-    int can = -1;
-    int columna_dinamica = 28;
-    string **MatrizActual = new string *[columna_dinamica];
-    string **MatrizAnterior= new string *[columna_dinamica];
-    string **MatrizSiguiente= new string *[columna_dinamica];
+    int cant;
+    Lista<Lista<string>> *ActualMatriz;
+    Lista<Lista<string>> *SiguienteMatriz;
+    Lista<Lista<string>> *AnteriorMatriz;
+    int cantPag;
+
 
 
 

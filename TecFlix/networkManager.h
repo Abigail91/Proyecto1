@@ -10,6 +10,7 @@ class NetworkManager: public QObject
 public:
     explicit NetworkManager(QObject*parent = nullptr);
     void makeRequest(QString endpointRequest);
+    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
 
 signals:
 void dataReadyRead(QByteArray);
@@ -18,7 +19,7 @@ public slots:
 void readRead(QNetworkReply*reply);
 
 private:
-    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+
 
 };
 

@@ -27,8 +27,7 @@ CONFIG += c++11
 
 SOURCES += \
         Archivo.cpp \
-        Node.cpp \
-        lista.cpp \
+        clickablelabel.cpp \
         main.cpp \
         mainwindow.cpp \
         networkmanager.cpp
@@ -36,10 +35,10 @@ SOURCES += \
 HEADERS += \
         Archivo.h \
         Node.h \
+        clickablelabel.h \
         lista.h \
         mainwindow.h \
-        networkManager.h \
-        networkman.h
+        networkManager.h
 
 FORMS += \
         mainwindow.ui

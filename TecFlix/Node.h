@@ -15,10 +15,15 @@ class Node
         ~Node();
 
         Node *next;
-        T data;
+        T  Data;
 
-        void delete_all();
-        void print();
 };
+
+template<typename T>
+Node<T>:: Node(T data){
+
+    Data = data;
+    next = nullptr;
+}
 
 #endif // NODE_H
