@@ -63,7 +63,7 @@ void Lista<T>::add_end(T data)
 template<typename T>
 void Lista<T>::del_all()
 {
-    head->delete_all();
+    head->next = nullptr;
     head = 0;
 }
 

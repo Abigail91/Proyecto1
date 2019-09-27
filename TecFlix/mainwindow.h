@@ -65,6 +65,7 @@ private:
       int actual;
       int anterior;
       int siguiente;
+      string modo = "Paginado";
 
 
 

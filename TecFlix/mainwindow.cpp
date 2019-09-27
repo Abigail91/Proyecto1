@@ -137,12 +137,8 @@ void MainWindow::menosBoton()
 void MainWindow::nPBoton()
 
  {
-       QString s = "http://www.imdb.com/title/tt1345836/?ref_=fn_tt_tt_1";
-      QString h = s.insert(4,"s");
-
-        Don.makeRequest(h);
-        cout <<endl;
-         cout <<"AAAA" << h.toStdString() << "AAAA";
+    modo = "No Paginado";
+    recargar();
 }
 
 void MainWindow::dataInDaHouse(QByteArray data)
@@ -507,21 +503,29 @@ void MainWindow::PagAnt()
 
 void  MainWindow::recargar(){
 
+    if ( win->layout() != nullptr )
+    {
+        QLayoutItem* item;
+        while ( ( item = win->layout()->takeAt( 0 ) ) != nullptr )
+        {
+            delete item->widget();
+            delete item;
+        }
+    }
 
-
-     Data->Leer(*zoom,actual,actual+1,actual-1);
-     if ( win->layout() != nullptr )
-     {
-         QLayoutItem* item;
-         while ( ( item = win->layout()->takeAt( 0 ) ) != nullptr )
-         {
-             delete item->widget();
-             delete item;
-         }
-     }
+     Data->Leer(*zoom,actual,actual+1,actual-1,modo);
 
    for (int i = 0;i<sqrt(*zoom);i++) {
        for (int j = 0;j<sqrt(*zoom); j++) {
+
+           QString s = QString::fromStdString(Data->ActualMatriz->get( ((i+1)*(j+1))-1).get(17));
+            if(s[4]!='s'){
+          s = s.insert(4,"s");
+            }
+
+            Don.makeRequest(s);
+
+
 
            ClickableLabel *label1 = new  ClickableLabel();
            QPixmap pix("/home/abigail/Desktop/Proyecto1/pel.jpg");
@@ -533,13 +537,11 @@ void  MainWindow::recargar(){
            connect(label1, SIGNAL (clicked(int)),this, SLOT (MostrarInformacion(int)));
 
 
-
-       }
-
-
+   }
    }
    ClickableLabel *label1 = new  ClickableLabel();
     layout->addWidget(label1,static_cast<int>(sqrt(*zoom)),0);
+
 
 
 }

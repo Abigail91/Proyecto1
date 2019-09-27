@@ -23,12 +23,14 @@ public:
     Lista<Lista<string>> *ActualMatriz;
     Lista<Lista<string>> *SiguienteMatriz;
     Lista<Lista<string>> *AnteriorMatriz;
+    Lista<Lista<string>> *MatrizNP = nullptr;
     int cantPag;
 
 
 
 
-public: void Leer(int zoom,int actual,int siguiente,int anterior);
+
+public: void Leer(int zoom,int actual,int siguiente,int anterior,string modo);
 
 
 };

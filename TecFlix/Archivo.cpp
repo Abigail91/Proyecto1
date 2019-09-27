@@ -17,17 +17,18 @@ Archivo::Archivo()
 
 
 
-void Archivo::Leer(int zoom, int actual, int siguiente, int anterior){
+void Archivo::Leer(int zoom, int actual, int siguiente, int anterior,string modo){
 
 
     cant = -1;
  ActualMatriz = new  Lista<Lista<string>>();
  SiguienteMatriz = new  Lista<Lista<string>>();
   AnteriorMatriz = new  Lista<Lista<string>>();
+// Abre el archivo
+QFile file("/home/abigail/Escritorio/TecFlix/movie_metadata.csv");
 
 
-        // Abre el archivo
-        QFile file("/home/abigail/Escritorio/TecFlix/movie_metadata.csv");
+        if (modo == "Paginado"){
         if ( !file.open(QFile::ReadOnly | QFile::Text) ) {
             qDebug() << "File not exists";
         } else {
@@ -88,6 +89,102 @@ void Archivo::Leer(int zoom, int actual, int siguiente, int anterior){
 
             }
             file.close();
+        }else{
+            if (MatrizNP == nullptr){
+                MatrizNP = new Lista<Lista<string>>();
+                if ( !file.open(QFile::ReadOnly | QFile::Text) ) {
+                    qDebug() << "File not exists";
+                } else {
+                    // Hilo para tomar informacion del archivo
+                    QTextStream in(&file);
+                    //Lee el archivo
+                    while (!in.atEnd())
+                    {
+                         cant = cant +1;
+                        QString line = in.readLine();
+                        Lista<string> temp;
+
+
+                            cout << cant << " NP " <<endl;
+                            for (QString item : line.split(",")) {
+                                temp.add_end(item.toStdString());
+
+                    }
+                            temp.print();
+                            cout  <<endl;
+                            MatrizNP->add_end(temp);
+                    }
+                    for (int i = 1; i<zoom+1;i++) {
+                        Lista<string> temp = MatrizNP->get(((actual-1)*zoom)+i);
+                        ActualMatriz->add_end(temp);
+                        cout << "Actual"<<endl;
+                        temp.print();
+                        cout << endl;
+
+                     }
+                    for (int i = 1; i<zoom+1;i++) {
+                        Lista<string> temp = MatrizNP->get(((siguiente-1)*zoom)+i);
+                        SiguienteMatriz->add_end(temp);
+                        cout << "Siguiente"<<endl;
+                        temp.print();
+                        cout << endl;
+
+                     }
+                    if (anterior>0){
+                    for (int i = 1; i<zoom+1;i++) {
+                        Lista<string> temp = MatrizNP->get(((anterior-1)*zoom)+i);
+                        AnteriorMatriz->add_end(temp);
+                        cout << "Anterior"<<endl;
+                        temp.print();
+                        cout << endl;
+
+                     }
+                    }
+
+
+
+                    if(cant%9 == 0){
+                    cantPag = cant/9;
+
+                    }else{
+                       cantPag = (cant/9)+1;
+                    }
+                    cout <<cant;
+                    cout <<cantPag;
+
+                    }
+                    file.close();
+
+            } else{
+                for (int i = 1; i<zoom+1;i++) {
+                    Lista<string> temp = MatrizNP->get(((actual-1)*zoom)+i);
+                    ActualMatriz->add_end(temp);
+                    cout << "Actual"<<endl;
+                    temp.print();
+                    cout << endl;
+
+                 }
+                for (int i = 1; i<zoom+1;i++) {
+                    Lista<string> temp = MatrizNP->get(((siguiente-1)*zoom)+i);
+                    SiguienteMatriz->add_end(temp);
+                    cout << "Siguiente"<<endl;
+                    temp.print();
+                    cout << endl;
+
+                 }
+                if (anterior>0){
+                for (int i = 1; i<zoom+1;i++) {
+                    Lista<string> temp = MatrizNP->get(((anterior-1)*zoom)+i);
+                    AnteriorMatriz->add_end(temp);
+                    cout << "Anterior"<<endl;
+                    temp.print();
+                    cout << endl;
+
+                 }
+                }
+
+            }
+        }
 
 
 
