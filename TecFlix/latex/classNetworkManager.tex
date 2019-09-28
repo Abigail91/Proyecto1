@@ -1,0 +1,121 @@
+\hypertarget{classNetworkManager}{}\section{Network\+Manager Class Reference}
+\label{classNetworkManager}\index{Network\+Manager@{Network\+Manager}}
+
+
+Gestiona las peticiones http.  
+
+
+
+
+{\ttfamily \#include $<$network\+Manager.\+h$>$}
+
+
+
+Inheritance diagram for Network\+Manager\+:
+% FIG 0
+
+
+Collaboration diagram for Network\+Manager\+:
+% FIG 1
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classNetworkManager_a88e268513ba60096866887dd19838069}{read\+Read} (Q\+Network\+Reply $\ast$reply)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classNetworkManager_afa06e697f96a990b55cd69e460461fc3}{data\+Ready\+Read} (Q\+Byte\+Array)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNetworkManager_a25e5a69c0dba31cc028050c2b6eea855}{Network\+Manager} (Q\+Object $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Se encarga de las peticiones http. \end{DoxyCompactList}\item 
+void \hyperlink{classNetworkManager_a4043336eb2e512c9705628fc7b8d0afb}{make\+Request} (Q\+String endpoint\+Request)
+\begin{DoxyCompactList}\small\item\em Hace un metodo G\+ET. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Network\+Access\+Manager $\ast$ \hyperlink{classNetworkManager_a191750af919d6240039974a5b6f35ee2}{manager} = new Q\+Network\+Access\+Manager(this)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Gestiona las peticiones http. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNetworkManager_a25e5a69c0dba31cc028050c2b6eea855}\label{classNetworkManager_a25e5a69c0dba31cc028050c2b6eea855}} 
+\index{Network\+Manager@{Network\+Manager}!Network\+Manager@{Network\+Manager}}
+\index{Network\+Manager@{Network\+Manager}!Network\+Manager@{Network\+Manager}}
+\subsubsection{\texorpdfstring{Network\+Manager()}{NetworkManager()}}
+{\footnotesize\ttfamily Network\+Manager\+::\+Network\+Manager (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Se encarga de las peticiones http. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classNetworkManager_afa06e697f96a990b55cd69e460461fc3}\label{classNetworkManager_afa06e697f96a990b55cd69e460461fc3}} 
+\index{Network\+Manager@{Network\+Manager}!data\+Ready\+Read@{data\+Ready\+Read}}
+\index{data\+Ready\+Read@{data\+Ready\+Read}!Network\+Manager@{Network\+Manager}}
+\subsubsection{\texorpdfstring{data\+Ready\+Read}{dataReadyRead}}
+{\footnotesize\ttfamily void Network\+Manager\+::data\+Ready\+Read (\begin{DoxyParamCaption}\item[{Q\+Byte\+Array}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Byte\+Array} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNetworkManager_a4043336eb2e512c9705628fc7b8d0afb}\label{classNetworkManager_a4043336eb2e512c9705628fc7b8d0afb}} 
+\index{Network\+Manager@{Network\+Manager}!make\+Request@{make\+Request}}
+\index{make\+Request@{make\+Request}!Network\+Manager@{Network\+Manager}}
+\subsubsection{\texorpdfstring{make\+Request()}{makeRequest()}}
+{\footnotesize\ttfamily void Network\+Manager\+::make\+Request (\begin{DoxyParamCaption}\item[{Q\+String}]{endpoint\+Request }\end{DoxyParamCaption})}
+
+
+
+Hace un metodo G\+ET. 
+
+Hace una peticion G\+ET al url.
+
+
+\begin{DoxyParams}{Parameters}
+{\em endpoint\+Request} & url al que se le hace el metodo G\+ET\\
+\hline
+{\em endpoint\+Request} & dirección web a la que se le realizará la petición. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNetworkManager_a88e268513ba60096866887dd19838069}\label{classNetworkManager_a88e268513ba60096866887dd19838069}} 
+\index{Network\+Manager@{Network\+Manager}!read\+Read@{read\+Read}}
+\index{read\+Read@{read\+Read}!Network\+Manager@{Network\+Manager}}
+\subsubsection{\texorpdfstring{read\+Read}{readRead}}
+{\footnotesize\ttfamily void Network\+Manager\+::read\+Read (\begin{DoxyParamCaption}\item[{Q\+Network\+Reply $\ast$}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em reply} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classNetworkManager_a191750af919d6240039974a5b6f35ee2}\label{classNetworkManager_a191750af919d6240039974a5b6f35ee2}} 
+\index{Network\+Manager@{Network\+Manager}!manager@{manager}}
+\index{manager@{manager}!Network\+Manager@{Network\+Manager}}
+\subsubsection{\texorpdfstring{manager}{manager}}
+{\footnotesize\ttfamily Q\+Network\+Access\+Manager$\ast$ Network\+Manager\+::manager = new Q\+Network\+Access\+Manager(this)}
+
+T\+O\+DO\+: describe 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+network\+Manager.\+h\item 
+networkmanager.\+cpp\end{DoxyCompactItemize}

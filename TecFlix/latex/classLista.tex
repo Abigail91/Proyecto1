@@ -1,0 +1,124 @@
+\hypertarget{classLista}{}\section{Lista$<$ T $>$ Class Template Reference}
+\label{classLista}\index{Lista$<$ T $>$@{Lista$<$ T $>$}}
+
+
+Estructura de datos para guardar las peliculas.  
+
+
+
+
+{\ttfamily \#include $<$lista.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLista_adce924e21607848663132290be1a959d}\label{classLista_adce924e21607848663132290be1a959d}} 
+\hyperlink{classLista_adce924e21607848663132290be1a959d}{Lista} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+void \hyperlink{classLista_a48b79118586cc9e1984472cccaee272c}{add\+\_\+end} (T Data)
+\begin{DoxyCompactList}\small\item\em Agrega datos a la lista. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLista_ae30265805a9c1656ad74e1caefb49483}\label{classLista_ae30265805a9c1656ad74e1caefb49483}} 
+void \hyperlink{classLista_ae30265805a9c1656ad74e1caefb49483}{del\+\_\+all} ()
+\begin{DoxyCompactList}\small\item\em Borra todos los datos de la lista. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLista_ac518d2c9eb4c1f24adc0f847b86767f2}\label{classLista_ac518d2c9eb4c1f24adc0f847b86767f2}} 
+void \hyperlink{classLista_ac518d2c9eb4c1f24adc0f847b86767f2}{print} ()
+\begin{DoxyCompactList}\small\item\em Muestra la lista en consola. \end{DoxyCompactList}\item 
+void \hyperlink{classLista_a8539edb8abc0d862bdd366169f277ca0}{search} (T Data)
+\begin{DoxyCompactList}\small\item\em Busca un dato en la lista. \end{DoxyCompactList}\item 
+T \hyperlink{classLista_acbab7f54b31ec1de68d13e02b3d265da}{get} (int pos)
+\begin{DoxyCompactList}\small\item\em Busca un dato por indice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLista_a4c7598b64da421aa84a1591d3dfa7626}\label{classLista_a4c7598b64da421aa84a1591d3dfa7626}} 
+\hyperlink{classNode}{Node}$<$ T $>$ $\ast$ {\bfseries head}
+\item 
+int \hyperlink{classLista_a091894d515b7cf5ce75cfec9d8f65dbe}{len}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Lista$<$ T $>$}
+
+Estructura de datos para guardar las peliculas. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classLista_a48b79118586cc9e1984472cccaee272c}\label{classLista_a48b79118586cc9e1984472cccaee272c}} 
+\index{Lista@{Lista}!add\+\_\+end@{add\+\_\+end}}
+\index{add\+\_\+end@{add\+\_\+end}!Lista@{Lista}}
+\subsubsection{\texorpdfstring{add\+\_\+end()}{add\_end()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classLista}{Lista}$<$ T $>$\+::add\+\_\+end (\begin{DoxyParamCaption}\item[{T}]{data }\end{DoxyParamCaption})}
+
+
+
+Agrega datos a la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Data} & Datos a guardar en la lista\\
+\hline
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLista_acbab7f54b31ec1de68d13e02b3d265da}\label{classLista_acbab7f54b31ec1de68d13e02b3d265da}} 
+\index{Lista@{Lista}!get@{get}}
+\index{get@{get}!Lista@{Lista}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \hyperlink{classLista}{Lista}$<$ T $>$\+::get (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption})}
+
+
+
+Busca un dato por indice. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & indice a buscar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T Dato buscado
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T Lista$<$\+T$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLista_a8539edb8abc0d862bdd366169f277ca0}\label{classLista_a8539edb8abc0d862bdd366169f277ca0}} 
+\index{Lista@{Lista}!search@{search}}
+\index{search@{search}!Lista@{Lista}}
+\subsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classLista}{Lista}$<$ T $>$\+::search (\begin{DoxyParamCaption}\item[{T}]{data\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Busca un dato en la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Data} & Dato a buscar\\
+\hline
+{\em data\+\_\+} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classLista_a091894d515b7cf5ce75cfec9d8f65dbe}\label{classLista_a091894d515b7cf5ce75cfec9d8f65dbe}} 
+\index{Lista@{Lista}!len@{len}}
+\index{len@{len}!Lista@{Lista}}
+\subsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \hyperlink{classLista}{Lista}$<$ T $>$\+::len}
+
+Primer nodo de la lista 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lista.\+h\end{DoxyCompactItemize}

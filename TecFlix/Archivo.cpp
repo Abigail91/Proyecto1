@@ -3,7 +3,9 @@
 #include "lista.h"
 #include <iostream>
 using namespace std;
-
+/**
+ * @brief Esta clase se encarga de gestionar los datos del programa.
+ */
 
 Archivo::Archivo()
 {
@@ -15,7 +17,14 @@ Archivo::Archivo()
 
 }
 
-
+/**
+ * @brief Lee el archivo e incluye los datos a la memoria del programa.
+ * @param Zoom cantidad de datos por pagina.
+ * @param actual numero de la pagina actual.
+ * @param siguiente numero de la pagina siguiente.
+ * @param anterior numero de la pagina anterior.
+ * @param modo forma en la que el cliente quiere ver los datos, paginados o no paginados.
+ */
 
 void Archivo::Leer(int zoom, int actual, int siguiente, int anterior,string modo){
 

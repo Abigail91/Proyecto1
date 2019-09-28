@@ -12,19 +12,51 @@ using namespace std;
 
 template <class T>
 
+/**
+ * @brief Estructura de datos para guardar las peliculas
+ *
+ */
 class Lista
 {
     public:
+        /**
+         * @brief Constructor por defecto
+         *
+         */
         Lista();
 
 
+        /**
+         * @brief Agrega datos a la lista
+         *
+         * @param Data Datos a guardar en la lista
+         */
         void add_end(T Data);
+        /**
+         * @brief  Borra todos los datos de la lista
+         *
+         */
         void del_all();
+        /**
+         * @brief Muestra la lista en consola
+         *
+         */
         void print();
+        /**
+         * @brief Busca un dato en la lista
+         *
+         * @param Data Dato a buscar
+         */
         void search(T Data);
+        /**
+         * @brief Busca un dato por indice
+         *
+         * @param pos indice a buscar
+         * @return T Dato buscado
+         */
         T get(int pos);
-        Node<T> *head;
-        int len;
+        Node<T> *head; /**Primer nodo de la lista*/
+        int len; /**Largo de la lista*/
 
     private:
 
@@ -32,6 +64,10 @@ class Lista
 };
 
 template<typename T>
+/**
+ * @brief 
+ *
+ */
 Lista<T>::Lista()
 {
     len = 0;
@@ -41,6 +77,11 @@ Lista<T>::Lista()
 
 // Insertar al final
 template<typename T>
+/**
+ * @brief 
+ *
+ * @param data
+ */
 void Lista<T>::add_end(T data)
 {
     Node<T> *new_node = new Node<T> (data);
@@ -61,6 +102,10 @@ void Lista<T>::add_end(T data)
 
 // Eliminar todos los nodos
 template<typename T>
+/**
+ * @brief 
+ *
+ */
 void Lista<T>::del_all()
 {
     head->next = nullptr;
@@ -69,6 +114,11 @@ void Lista<T>::del_all()
 
 // Buscar el dato de un nodo
 template<typename T>
+/**
+ * @brief 
+ *
+ * @param data_
+ */
 void Lista<T>::search(T data_)
 {
     Node<T> *temp = head;
@@ -90,6 +140,12 @@ void Lista<T>::search(T data_)
     cout << endl << endl;
 }
 template<typename T>
+/**
+ * @brief 
+ *
+ * @param pos
+ * @return T Lista<T>
+ */
 T Lista<T>::get(int pos) {
 
        Node<T> *temp = this->head;
@@ -101,6 +157,10 @@ T Lista<T>::get(int pos) {
 
    }
 template<typename T>
+/**
+ * @brief 
+ *
+ */
 void Lista<T>::print() {
         Node<T> *temp = this->head;
         while (temp != NULL) {

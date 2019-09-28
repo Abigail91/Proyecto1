@@ -15,21 +15,36 @@
 using namespace std;
 
 
+/**
+ * @brief Esta clase se encarga de gestionar los datos del programa.
+ */
 class Archivo
 {
 public:
+    /**
+     * @brief Constructor por defecto
+     *
+     */
     Archivo();
-    int cant;
-    Lista<Lista<string>> *ActualMatriz;
-    Lista<Lista<string>> *SiguienteMatriz;
-    Lista<Lista<string>> *AnteriorMatriz;
-    Lista<Lista<string>> *MatrizNP = nullptr;
-    int cantPag;
+    int cant; /**Cantidad de peliculas*/
+    Lista<Lista<string>> *ActualMatriz; /**Datos de pagina actual */
+    Lista<Lista<string>> *SiguienteMatriz; /**Datos de pagina siguiente */
+    Lista<Lista<string>> *AnteriorMatriz; /**Datos de pagina anterior */
+    Lista<Lista<string>> *MatrizNP = nullptr; /**Datos de modo no paginado */
+    int cantPag; /**Cantidad de paginas */
 
 
 
 
 
+    /**
+     * @brief Lee el archivo e incluye los datos a la memoria del programa.
+     * @param Zoom cantidad de datos por pagina.
+     * @param actual numero de la pagina actual.
+     * @param siguiente numero de la pagina siguiente.
+     * @param anterior numero de la pagina anterior.
+     * @param modo forma en la que el cliente quiere ver los datos, paginados o no paginados.
+     */
 public: void Leer(int zoom,int actual,int siguiente,int anterior,string modo);
 
 

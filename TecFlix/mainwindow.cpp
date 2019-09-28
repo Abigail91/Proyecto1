@@ -13,7 +13,11 @@
 #include<QPushButton>
 #include <math.h>
 #include "clickablelabel.h"
+#include <QScrollBar>
 
+/**
+ * @brief Clase encargada de la interfaz del programa.
+ */
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -94,8 +98,12 @@ MainWindow::MainWindow(QWidget *parent) :
         QPalette palette;
         palette.setBrush(QPalette::Background, bkgnd);
         this->setPalette(palette);
+        
 
 }
+/**
+ * @brief Aumenta el zoom de la pantalla.
+ */
 
 void MainWindow::masBoton()
  {
@@ -115,7 +123,9 @@ void MainWindow::masBoton()
     }
 
  }
-
+/**
+ * @brief Disminuye el zoom de la pantalla.
+ */
 void MainWindow::menosBoton()
  {
     if(*zoom>9){}
@@ -134,6 +144,9 @@ void MainWindow::menosBoton()
      this->recargar();
     }
  }
+/**
+ * @brief Cambia al modo no paginado
+ */
 void MainWindow::nPBoton()
 
  {
@@ -148,7 +161,9 @@ void MainWindow::dataInDaHouse(QByteArray data)
 
     cout << dataString.toStdString();
 }
-
+/**
+ * @brief Cambian la pagina actual a la que se esta mostrando en el boton
+ */
 void MainWindow::CambiarPagina1()
 {
     string *temp = new string( primero->text().toStdString());
@@ -184,6 +199,10 @@ void MainWindow::CambiarPagina5()
     actual = atoi(temp->c_str());
     recargar();
 }
+/**
+ * @brief Muestra la información de la pelicula.
+ * @param pos Posicion en la lista de la pelicula mostrada en el label.
+ */
 
 void MainWindow::MostrarInformacion(int pos)
 {
@@ -442,7 +461,9 @@ void MainWindow::MostrarInformacion(int pos)
 
 
 }
-
+/**
+ * @brief Pasa al siguiente bloque de paginas los botones.
+ */
 void MainWindow::Siguiente()
 {
     string *temp = new string( primero->text().toStdString());
@@ -463,6 +484,9 @@ void MainWindow::Siguiente()
     }
 
 }
+/**
+ * @brief Pasa al anterior bloque de paginas los botones.
+ */
 
 void MainWindow::Anterior()
 {
@@ -484,7 +508,9 @@ void MainWindow::Anterior()
     }
 
 }
-
+/**
+ * @brief Pasa a la pagina siguiente.
+ */
 void MainWindow::PagSig()
 {
     if (actual< Data->cantPag){
@@ -492,6 +518,9 @@ void MainWindow::PagSig()
     recargar();
     }
 }
+/**
+ * @brief Pasa a la pagina anterior.
+ */
 
 void MainWindow::PagAnt()
 {
@@ -545,7 +574,9 @@ void  MainWindow::recargar(){
 
 
 }
-
+/**
+ * @brief Muestra los botones de paginaciòn.
+ */
 void MainWindow::MostrarPaginas(){
 
 

@@ -1,0 +1,129 @@
+\hypertarget{classArchivo}{}\section{Archivo Class Reference}
+\label{classArchivo}\index{Archivo@{Archivo}}
+
+
+Esta clase se encarga de gestionar los datos del programa.  
+
+
+
+
+{\ttfamily \#include $<$Archivo.\+h$>$}
+
+
+
+Collaboration diagram for Archivo\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classArchivo_a0adea0477e973c3e90c34b487d39b8e6}{Archivo} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+void \hyperlink{classArchivo_a986e4644296dbb5d8affbadce8a46e34}{Leer} (int zoom, int actual, int siguiente, int anterior, string modo)
+\begin{DoxyCompactList}\small\item\em Lee el archivo e incluye los datos a la memoria del programa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classArchivo_aa19ed572a101838711f76e327631ac53}\label{classArchivo_aa19ed572a101838711f76e327631ac53}} 
+int {\bfseries cant}
+\item 
+\hyperlink{classLista}{Lista}$<$ \hyperlink{classLista}{Lista}$<$ string $>$ $>$ $\ast$ \hyperlink{classArchivo_ab882dac3d098e3fd3ebd1333594cb918}{Actual\+Matriz}
+\item 
+\hyperlink{classLista}{Lista}$<$ \hyperlink{classLista}{Lista}$<$ string $>$ $>$ $\ast$ \hyperlink{classArchivo_afcaf7382232c4a0d50366ee649b2ea68}{Siguiente\+Matriz}
+\item 
+\hyperlink{classLista}{Lista}$<$ \hyperlink{classLista}{Lista}$<$ string $>$ $>$ $\ast$ \hyperlink{classArchivo_abc656abfd921856290a0235300b0538d}{Anterior\+Matriz}
+\item 
+\hyperlink{classLista}{Lista}$<$ \hyperlink{classLista}{Lista}$<$ string $>$ $>$ $\ast$ \hyperlink{classArchivo_a4b68b9a977f1113b87506c0c90258c8e}{Matriz\+NP} = nullptr
+\item 
+int \hyperlink{classArchivo_aa5039b0c0371e9f15fbd53dac23f73f4}{cant\+Pag}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Esta clase se encarga de gestionar los datos del programa. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classArchivo_a0adea0477e973c3e90c34b487d39b8e6}\label{classArchivo_a0adea0477e973c3e90c34b487d39b8e6}} 
+\index{Archivo@{Archivo}!Archivo@{Archivo}}
+\index{Archivo@{Archivo}!Archivo@{Archivo}}
+\subsubsection{\texorpdfstring{Archivo()}{Archivo()}}
+{\footnotesize\ttfamily Archivo\+::\+Archivo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto. 
+
+Esta clase se encarga de gestionar los datos del programa. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classArchivo_a986e4644296dbb5d8affbadce8a46e34}\label{classArchivo_a986e4644296dbb5d8affbadce8a46e34}} 
+\index{Archivo@{Archivo}!Leer@{Leer}}
+\index{Leer@{Leer}!Archivo@{Archivo}}
+\subsubsection{\texorpdfstring{Leer()}{Leer()}}
+{\footnotesize\ttfamily void Archivo\+::\+Leer (\begin{DoxyParamCaption}\item[{int}]{zoom,  }\item[{int}]{actual,  }\item[{int}]{siguiente,  }\item[{int}]{anterior,  }\item[{string}]{modo }\end{DoxyParamCaption})}
+
+
+
+Lee el archivo e incluye los datos a la memoria del programa. 
+
+Cantidad de paginas 
+\begin{DoxyParams}{Parameters}
+{\em Zoom} & cantidad de datos por pagina. \\
+\hline
+{\em actual} & numero de la pagina actual. \\
+\hline
+{\em siguiente} & numero de la pagina siguiente. \\
+\hline
+{\em anterior} & numero de la pagina anterior. \\
+\hline
+{\em modo} & forma en la que el cliente quiere ver los datos, paginados o no paginados.\\
+\hline
+{\em Zoom} & cantidad de datos por pagina. \\
+\hline
+{\em actual} & numero de la pagina actual. \\
+\hline
+{\em siguiente} & numero de la pagina siguiente. \\
+\hline
+{\em anterior} & numero de la pagina anterior. \\
+\hline
+{\em modo} & forma en la que el cliente quiere ver los datos, paginados o no paginados. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classArchivo_ab882dac3d098e3fd3ebd1333594cb918}\label{classArchivo_ab882dac3d098e3fd3ebd1333594cb918}} 
+\index{Archivo@{Archivo}!Actual\+Matriz@{Actual\+Matriz}}
+\index{Actual\+Matriz@{Actual\+Matriz}!Archivo@{Archivo}}
+\subsubsection{\texorpdfstring{Actual\+Matriz}{ActualMatriz}}
+{\footnotesize\ttfamily \hyperlink{classLista}{Lista}$<$\hyperlink{classLista}{Lista}$<$string$>$ $>$$\ast$ Archivo\+::\+Actual\+Matriz}
+
+Cantidad de peliculas \mbox{\Hypertarget{classArchivo_abc656abfd921856290a0235300b0538d}\label{classArchivo_abc656abfd921856290a0235300b0538d}} 
+\index{Archivo@{Archivo}!Anterior\+Matriz@{Anterior\+Matriz}}
+\index{Anterior\+Matriz@{Anterior\+Matriz}!Archivo@{Archivo}}
+\subsubsection{\texorpdfstring{Anterior\+Matriz}{AnteriorMatriz}}
+{\footnotesize\ttfamily \hyperlink{classLista}{Lista}$<$\hyperlink{classLista}{Lista}$<$string$>$ $>$$\ast$ Archivo\+::\+Anterior\+Matriz}
+
+Datos de pagina siguiente \mbox{\Hypertarget{classArchivo_aa5039b0c0371e9f15fbd53dac23f73f4}\label{classArchivo_aa5039b0c0371e9f15fbd53dac23f73f4}} 
+\index{Archivo@{Archivo}!cant\+Pag@{cant\+Pag}}
+\index{cant\+Pag@{cant\+Pag}!Archivo@{Archivo}}
+\subsubsection{\texorpdfstring{cant\+Pag}{cantPag}}
+{\footnotesize\ttfamily int Archivo\+::cant\+Pag}
+
+Datos de modo no paginado \mbox{\Hypertarget{classArchivo_a4b68b9a977f1113b87506c0c90258c8e}\label{classArchivo_a4b68b9a977f1113b87506c0c90258c8e}} 
+\index{Archivo@{Archivo}!Matriz\+NP@{Matriz\+NP}}
+\index{Matriz\+NP@{Matriz\+NP}!Archivo@{Archivo}}
+\subsubsection{\texorpdfstring{Matriz\+NP}{MatrizNP}}
+{\footnotesize\ttfamily \hyperlink{classLista}{Lista}$<$\hyperlink{classLista}{Lista}$<$string$>$ $>$$\ast$ Archivo\+::\+Matriz\+NP = nullptr}
+
+Datos de pagina anterior \mbox{\Hypertarget{classArchivo_afcaf7382232c4a0d50366ee649b2ea68}\label{classArchivo_afcaf7382232c4a0d50366ee649b2ea68}} 
+\index{Archivo@{Archivo}!Siguiente\+Matriz@{Siguiente\+Matriz}}
+\index{Siguiente\+Matriz@{Siguiente\+Matriz}!Archivo@{Archivo}}
+\subsubsection{\texorpdfstring{Siguiente\+Matriz}{SiguienteMatriz}}
+{\footnotesize\ttfamily \hyperlink{classLista}{Lista}$<$\hyperlink{classLista}{Lista}$<$string$>$ $>$$\ast$ Archivo\+::\+Siguiente\+Matriz}
+
+Datos de pagina actual 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Archivo.\+h\item 
+Archivo.\+cpp\end{DoxyCompactItemize}
